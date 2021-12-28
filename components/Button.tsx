@@ -10,14 +10,10 @@ export function Button({text, id}: Props) {
 
   return (
     <div className={styles.button_wrapper}>
-      <button
-        className={`${styles.button} ${id.match(/omikuji/) && styles.omikuji_button}`}
-      >
         {
           id.match(/omikuji/)
-            && <Link href="/omikuji">{text}</Link>
+            && <Link href="/omikuji"><button className={`${styles.button} ${styles.omikuji_button}`}>{text}</button></Link>
         }
-      </button>
     </div>
   )
 }
