@@ -14,6 +14,10 @@ export function Button({text, id}: Props) {
           id.match(/omikuji/)
             && <Link href="/omikuji"><button className={`${styles.button} ${styles.omikuji_button}`}>{text}</button></Link>
         }
+        {
+          id.match(/back/)
+            && <Link href="/"><button className={`${styles.button} ${styles.back_button}`}>{text}</button></Link>
+        }
     </div>
   )
 }
