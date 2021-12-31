@@ -1,0 +1,20 @@
+@keyframes omikuji {
+  from {
+    transform: rotate(-36deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}
+
+.img_wrapper {
+  text-align: center;
+}
+
+.main_img {
+  cursor: pointer;
+  transform: rotate(-36deg);
+  &:hover {
+    animation: omikuji .3s linear infinite alternate;
+  }
+}
