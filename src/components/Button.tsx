@@ -12,11 +12,19 @@ export function Button({text, id}: Props) {
     <div className={styles.button_wrapper}>
         {
           id.match(/omikuji/)
-            && <Link href="/omikuji"><button className={`${styles.button} ${styles.omikuji_button}`}>{text}</button></Link>
+            && <Link href="/omikuji">
+                <button className={`${styles.button} ${styles.omikuji_button}`}>{text}</button>
+               </Link>
         }
         {
           id.match(/back/)
-            && <Link href="/"><button className={`${styles.button} ${styles.back_button}`}>{text}</button></Link>
+            && <Link href="/">
+                <button className={`${styles.button} ${styles.back_button}`}>{text}</button>
+               </Link>
+        }
+        {
+          id.match(/close/)
+            && <div className={styles.close_button}><span></span></div>
         }
     </div>
   )

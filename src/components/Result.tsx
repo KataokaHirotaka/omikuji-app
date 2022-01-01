@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import Image from 'next/image';
+import { Button } from './index';
 
-export function Result() {
-  const OMIKUJI_ITEM = ['大吉', '中吉', '小吉', '凶'];
+type Props = {
+  clickFlag: boolean;
+  setClickFlag: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export function Result({clickFlag, setClickFlag}: Props) {
+  
+  // おみくじの結果を表示
+  const random_num = Math.floor(Math.random() * 7 + 1);
   return (
-    <div>
-
+    <div style={{display: clickFlag ? 'block' : 'none'}}>
+      <p>結果</p>
+      <div className="close_button_wrapper" onClick={() => {
+        setClickFlag(false);
+      }}>
+        <Button text='' id="close"/>
+      </div>
+      <div className="result_wrapper">
+        <Image 
+          src={random_num ? `/img/${random_num}.png` : ''}
+          alt="おみくじの結果"
+          width={500}
+          height={500}
+        />
+      </div>
     </div>
   )
 }

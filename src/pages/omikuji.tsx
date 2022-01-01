@@ -1,14 +1,20 @@
 import Image from 'next/image';
-import { Button } from 'src/components';
+import { Button, Result } from 'src/components';
 import styles from 'src/styles/omikuji.module.scss';
+import React, { useState } from 'react';
 
 export default function omikugi() {
+  const [clickFlag, setClickFlag] = useState(false);
   return (
     <>
       <Button text="もどる" id="back"/>
       <p style={{textAlign: 'center'}}>おみくじをクリックしてね</p>
       
-      <div className={styles.img_wrapper}>
+      <div className={styles.img_wrapper} onClick={() => {
+        setTimeout(() => {
+          setClickFlag(true);
+        }, 1000);
+      }}>
         <Image 
           src="/img/omikuji.png"
           alt="おみくじ"
@@ -17,6 +23,7 @@ export default function omikugi() {
           className={styles.main_img}
         />
       </div>
+      <Result clickFlag={clickFlag} setClickFlag={setClickFlag}/>
     </>
   )
 }
