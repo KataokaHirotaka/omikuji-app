@@ -6,6 +6,16 @@
     transform: rotate(20deg);
   }
 }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .img_wrapper {
   text-align: center;
@@ -14,7 +24,8 @@
 .main_img {
   cursor: pointer;
   transform: rotate(-36deg);
+  animation: fadeUp .8s linear normal;
   &:hover {
-    animation: omikuji .3s linear infinite alternate;
+    animation: omikuji .2s linear infinite alternate;
   }
 }

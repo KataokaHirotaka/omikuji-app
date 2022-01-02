@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Button } from './index';
+import styles from './styles/Result.module.scss';
 
 type Props = {
   clickFlag: boolean;
@@ -17,7 +18,7 @@ export function Result({clickFlag, setClickFlag}: Props) {
       }}>
         <Button text='' id="close"/>
       </div>
-      <div className="result_wrapper">
+      <div className={styles.result_wrapper}>
         <Image 
           src={random_num ? `/img/${random_num}.png` : ''}
           alt="おみくじの結果"
