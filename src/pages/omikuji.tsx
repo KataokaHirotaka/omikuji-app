@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button, Result } from 'src/components';
+import { Button, Result, Header } from 'src/components';
 import styles from 'src/styles/omikuji.module.scss';
 import React, { useState } from 'react';
 
@@ -7,6 +7,7 @@ export default function omikugi() {
   const [clickFlag, setClickFlag] = useState(false);
   return (
     <>
+      {/* <Header /> */}
       <Button text="もどる" id="back"/>
       <p style={{textAlign: 'center'}}>おみくじをクリックしてね</p>
       
