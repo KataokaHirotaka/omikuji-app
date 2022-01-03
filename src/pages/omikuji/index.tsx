@@ -3,7 +3,7 @@ import { Button, Result, Header } from 'src/components';
 import styles from 'src/styles/omikuji.module.scss';
 import React, { useState } from 'react';
 
-export default function omikuji() {
+export default function Omikuji() {
   const [clickFlag, setClickFlag] = useState(false);
   return (
     <>
