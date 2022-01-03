@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styles from './styles/Main.module.scss';
 import { Button, Result, Header } from './index';
 
