@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { Result } from 'src/components/index';
 import styles from 'src/components/styles/Modal.module.scss';
 
@@ -7,10 +8,13 @@ type Props = {
 }
 
 export const Modal = ({clickFlag, setClickFlag}: Props) => {
+  const handleClick = useCallback(() => {
+    setClickFlag(false);
+  }, []);
   return (
-    <div>
-      <div className={`${styles.overlay} ${clickFlag && styles.active}`}></div>
-      <div>
+    <div className={`${styles.modal_content_wrapper} ${styles.active}`}>
+      <div className={`${styles.overlay} ${clickFlag && styles.active}`} onClick={handleClick}></div>
+      <div className={`${styles.modal} ${clickFlag && styles.active}`}>
         <Result setClickFlag={setClickFlag}/>
       </div>
     </div>

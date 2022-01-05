@@ -9,7 +9,7 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(500px);
   }
   to {
     opacity: 1;
@@ -17,14 +17,52 @@
   }
 }
 
+@keyframes littieFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.button_wrapper {
+  text-align: center;
+  animation: littieFadeUp .4s linear normal;
+}
+
+.omikuji_content_wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  &.inactive {
+    display: none;
+  }
+}
+
+.omikuji_content {
+  width: 300px;
+  height: 350px;
+  position: absolute;
+  top: calc(50% - 175px);
+  left: calc(50% - 150px);
+  &_text {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: littieFadeUp .6s linear normal;
+  }
+}
+
 .img_wrapper {
   text-align: center;
+  animation: fadeUp .8s linear normal;
 }
 
 .main_img {
   cursor: pointer;
   transform: rotate(-36deg);
-  animation: fadeUp .8s linear normal;
   &:hover {
     animation: omikuji .2s linear infinite alternate;
   }
