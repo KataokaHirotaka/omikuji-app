@@ -26,7 +26,6 @@ export function Main ({id}: Props) {
   // 画面遷移を遅らせてアニメーションを魅せる
   const delayTransition = () => {
     const href = window.location.href;
-    console.log(location);
     setTimeout(() => {
       window.location.href = href + '/jinja';
     }, 900);

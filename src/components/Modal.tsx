@@ -16,7 +16,6 @@ export const Modal = ({ randomNum, clickFlag, setClickFlag }: Props) => {
   }, []);
 
   const { width, height } = useWindowSize();
-  console.log(width);
 
   return (
     <div className={`${styles.modal_content_wrapper} ${clickFlag && styles.active}`}>

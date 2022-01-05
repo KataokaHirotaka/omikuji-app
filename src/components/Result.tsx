@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from './index';
 import styles from './styles/Result.module.scss';
 
@@ -17,6 +17,7 @@ export const Result = ({ randomNum, setClickFlag }: Props) => {
 
   useEffect(() => {
     setIsLoading(true);
+    console.log(88888888888);
   }, [randomNum]);
   
   return (
