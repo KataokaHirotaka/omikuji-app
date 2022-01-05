@@ -30,12 +30,6 @@ export function Button({text, id}: Props) {
           id.match(/jinja/)
             && <button className={`${styles.button} ${styles.go_button}`}>{text}</button>
         }
-        {/* {
-          id.match(/jinja/)
-            && <Link href="/jinja">
-                <button className={`${styles.button} ${styles.go_button}`}>{text}</button>
-               </Link>
-        } */}
         {
           id.match(/return/)
            && <Link href="/">
