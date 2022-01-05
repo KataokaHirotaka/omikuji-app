@@ -4,12 +4,21 @@ import styles from 'src/styles/omikuji.module.scss';
 import React, { useCallback, useState } from 'react';
 
 const Omikuji = () => {
+  // おみくじの結果を作成
+  const [randomNum, setRandomNum] = useState<number>();
+  const createRandomNum = () => {
+    const random_num = Math.floor(Math.random() * 7 + 1);
+    setRandomNum(random_num);
+  }
   const [clickFlag, setClickFlag] = useState(false);
   const handleClick = useCallback(() => {
     setTimeout(() => {
       setClickFlag(true);
+      createRandomNum();
     }, 1000);
-  }, [clickFlag]);
+  }, []);
+
+
   return (
     <>
       <div className={`${styles.omikuji_content_wrapper} ${clickFlag && styles.inactive}`}>
@@ -29,7 +38,8 @@ const Omikuji = () => {
           </div>
         </div>
       </div>
-      <Modal clickFlag={clickFlag} setClickFlag={setClickFlag} />
+      {/* TODO useContextを使う*/}
+      <Modal randomNum={randomNum} clickFlag={clickFlag} setClickFlag={setClickFlag} />
     </>
   )
 }
