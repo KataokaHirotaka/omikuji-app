@@ -1,63 +1,73 @@
-.button_wrapper {
-  @at-root {
-    & {
-      text-align: center;
-    }
-    .button {
-      width: 140px;
-      padding: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: .3s;
-      border-radius: 8px;
-      &:hover {
-        transition: .3s;
-        opacity: .8;
-      }
-    }
+.button {
+  width: 140px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+  border-radius: 8px;
+  &:hover {
+    transition: .3s;
+    opacity: .8;
+  }
+}
 
-    .omikuji_button {
-      text-align: center;
-      position: absolute;
-      left: calc(50% - 68px);
-      top: calc(50% - 24px);
-      background-color: #FFDEE0;
-      color: #A32F2F;
-      border: 1px solid #FFA7AE;
-      
-    }
+.omikuji_button {
+  text-align: center;
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - -60px);
+  background-color: #FFDEE0;
+  color: #A32F2F;
+  border: 1px solid #FFA7AE;
+}
+.return_button {
+  text-align: center;
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 200px);
+  background-color: #FFDEE0;
+  color: #A32F2F;
+  border: 1px solid #FFA7AE;
+}
+.go_button {
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 68px);
+  top: calc(50% - 24px);
+  color: #fff;
+  background-color: #8e4444;
+  border: 1px solid #aa6369;
+}
 
-    .back_button {
-      margin-top: 50px;
-    }
+.back_button {
+  margin-top: 50px;
+}
 
-    .close_button {
-      width: 20px;
-      height: 20px;
-      position: relative;
-      cursor: pointer;
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 20px;
-        height: 1px;
-        background-color: #333;
-        position: absolute;
-        top: 10px;
-        left: 0;
-        transform: rotate(135deg);
-      }
-      span {
-        display: inline-block;
-        width: 20px;
-        height: 1px;
-        background-color: #333;
-        position: absolute;
-        top: 10px;
-        left: 0;
-        transform: rotate(45deg);
-      }
-    }
+.close_button {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transform: rotate(135deg);
+  }
+  span {
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transform: rotate(45deg);
   }
 }

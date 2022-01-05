@@ -7,7 +7,7 @@ import { Main } from './../components/index';
 const Home = () => {
   return (
     <div className={styles.container}>
-      <Main />
+      <Main id="index"/>
     </div>
   )
 }

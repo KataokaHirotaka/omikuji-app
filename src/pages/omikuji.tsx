@@ -8,7 +8,9 @@ export default function Omikuji() {
   return (
     <>
       {/* <Header /> */}
-      <Button text="もどる" id="back"/>
+      <div style={{textAlign: 'center'}}>
+        <Button text="もどる" id="back"/>
+      </div>
       <p style={{textAlign: 'center'}}>おみくじをクリックしてね</p>
       
       <div className={styles.img_wrapper} onClick={() => {

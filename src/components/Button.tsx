@@ -9,7 +9,7 @@ type Props = {
 export function Button({text, id}: Props) {
 
   return (
-    <div className={styles.button_wrapper}>
+    <>
         {
           id.match(/omikuji/)
             && <Link href="/omikuji">
@@ -26,6 +26,22 @@ export function Button({text, id}: Props) {
           id.match(/close/)
             && <div className={styles.close_button}><span></span></div>
         }
-    </div>
+        {
+          id.match(/jinja/)
+            && <button className={`${styles.button} ${styles.go_button}`}>{text}</button>
+        }
+        {/* {
+          id.match(/jinja/)
+            && <Link href="/jinja">
+                <button className={`${styles.button} ${styles.go_button}`}>{text}</button>
+               </Link>
+        } */}
+        {
+          id.match(/return/)
+           && <Link href="/">
+                <button className={`${styles.button} ${styles.return_button}`}>{text}</button>
+              </Link>
+        }
+    </>
   )
 }
