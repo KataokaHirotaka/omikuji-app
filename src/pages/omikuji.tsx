@@ -1,10 +1,16 @@
 import Image from 'next/image';
-import { Button, Result, Header } from 'src/components';
+import { Button, Result, Modal, Header } from 'src/components';
 import styles from 'src/styles/omikuji.module.scss';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 export default function Omikuji() {
   const [clickFlag, setClickFlag] = useState(false);
+  const handleClick = useCallback(() => {
+    // 時間を遅らせて結果を表示する
+    setTimeout(() => {
+      setClickFlag(true);
+    }, 1000);
+  }, [clickFlag]);
   return (
     <>
       {/* <Header /> */}
@@ -12,13 +18,8 @@ export default function Omikuji() {
         <Button text="もどる" id="back"/>
       </div>
       <p style={{textAlign: 'center'}}>おみくじをクリックしてね</p>
-      
-      <div className={styles.img_wrapper} onClick={() => {
-        setTimeout(() => {
-          setClickFlag(true);
-        }, 1000);
-      }}>
-        <Image 
+      <div className={styles.img_wrapper} onClick={handleClick}>
+        <Image
           src="/img/omikuji.png"
           alt="おみくじ"
           width={200}
@@ -26,7 +27,10 @@ export default function Omikuji() {
           className={styles.main_img}
         />
       </div>
-      <Result clickFlag={clickFlag} setClickFlag={setClickFlag}/>
+      <div></div>
+
+      <Modal clickFlag={clickFlag} setClickFlag={setClickFlag} />
+      {/* <Result setClickFlag={setClickFlag}/> */}
     </>
   )
 }

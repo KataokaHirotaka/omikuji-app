@@ -3,15 +3,15 @@ import { Button } from './index';
 import styles from './styles/Result.module.scss';
 
 type Props = {
-  clickFlag: boolean;
+  // clickFlag: boolean;
   setClickFlag: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export function Result({clickFlag, setClickFlag}: Props) {
-  
+export function Result({setClickFlag}: Props) {
+
   // おみくじの結果を表示
   const random_num = Math.floor(Math.random() * 7 + 1);
   return (
-    <div style={{display: clickFlag ? 'block' : 'none'}}>
+    <div>
       <p>結果</p>
       <div className="close_button_wrapper" onClick={() => {
         setClickFlag(false);
@@ -19,7 +19,7 @@ export function Result({clickFlag, setClickFlag}: Props) {
         <Button text='' id="close"/>
       </div>
       <div className={styles.result_wrapper}>
-        <Image 
+        <Image
           src={random_num ? `/img/${random_num}.png` : ''}
           alt="おみくじの結果"
           width={500}
