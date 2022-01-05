@@ -19,7 +19,7 @@ export const Modal = ({ randomNum, clickFlag, setClickFlag }: Props) => {
   console.log(width);
 
   return (
-    <div className={`${styles.modal_content_wrapper} ${styles.active}`}>
+    <div className={`${styles.modal_content_wrapper} ${clickFlag && styles.active}`}>
       <div className={`${styles.overlay} ${clickFlag && styles.active}`} onClick={handleClick}>
       </div>
       <div className={`${styles.modal} ${clickFlag && styles.active}`}>

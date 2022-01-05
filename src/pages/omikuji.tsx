@@ -22,10 +22,10 @@ const Omikuji = () => {
   return (
     <>
       <div className={`${styles.omikuji_content_wrapper} ${clickFlag && styles.inactive}`}>
-        <div className={styles.button_wrapper}>
-          <Button text="帰る" id="back"/>
-        </div>
         <div className={styles.omikuji_content}>
+          <div className={styles.button_wrapper}>
+            <Button text="帰る" id="back"/>
+          </div>
           <p className={styles.omikuji_content_text}>おみくじをクリックしてね</p>
           <div className={styles.img_wrapper} onClick={handleClick}>
             <Image

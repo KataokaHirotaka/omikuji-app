@@ -40,8 +40,11 @@
   background-image: url('../../../public/img/jinja.jpeg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
+  background-size: 100%;
   animation: fadeUp .8s linear normal;
+  @media screen and (min-width: 1024px) {
+    background-size: 50%;
+  }
 }
 
 .second_main {
@@ -50,12 +53,15 @@
   background-image: url('../../../public/img/jinja_naka.jpeg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
+  background-size: 100%;
   animation: fadeUp .8s linear normal;
+  @media screen and (min-width: 1024px) {
+    background-size: 50%;
+  }
 }
 
 .button_wrapper {
-  width: 143px;
+  width: 140px;
   height: 48px;
   padding: 10px;
   font-size: 16px;
