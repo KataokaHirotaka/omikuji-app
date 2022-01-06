@@ -7,10 +7,10 @@ type Props = {
   id: string
 }
 
-export function Main ({id}: Props) {
+export const Main = ({id}: Props) => {
   const mainEl = useRef<HTMLDivElement>(null);
   const secondMainEl = useRef<HTMLDivElement>(null);
-  
+
   const handleClick = () => {
     const main = mainEl.current;
     if (main != null) {
@@ -49,8 +49,10 @@ export function Main ({id}: Props) {
         id.match(/jinja/)
           &&
             <div ref={secondMainEl} className={styles.second_main}>
-              <Button text="おみくじを引く" id="omikuji" />
-              <Button text="帰る" id="return" />
+              <div className={styles.jinja_button_wrapper}>
+                <Button text="おみくじを引く" id="omikuji" />
+                <Button text="帰る" id="return" />
+              </div>
             </div>
       }
     </>
