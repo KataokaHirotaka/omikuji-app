@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Button, Result, Modal, Header } from 'src/components';
 import styles from 'src/styles/omikuji.module.scss';
 import React, { useCallback, useState } from 'react';
+import Head from 'next/head'
 
 const Omikuji = () => {
   // おみくじの結果を作成
@@ -21,6 +22,10 @@ const Omikuji = () => {
 
   return (
     <>
+      <Head>
+        <title>おみくじを引くよ</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      </Head>
       <div className={`${styles.omikuji_content_wrapper} ${clickFlag && styles.inactive}`}>
         <div className={styles.omikuji_content}>
           <div className={styles.button_wrapper}>

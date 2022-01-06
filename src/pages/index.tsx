@@ -6,9 +6,17 @@ import { Main } from './../components/index';
 
 const Home = () => {
   return (
-    <div className={styles.container}>
-      <Main id="index"/>
-    </div>
+    <>
+      {/* TODO */}
+      <Head>
+        <title>神社の入口</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      </Head>
+      <div className={styles.container}>
+        <Main id="index"/>
+      </div>
+    </>
+    
   )
 }
 
